@@ -6,15 +6,15 @@ using System.Threading;
 
 namespace TheUncodedOne
 {
-    class Battle
+    public class Battle
     {
-        private Party _party1;
-        private Party _party2;
+        private Player _player1;
+        private Player _player2;
 
-        public Battle(Party party1, Party party2)
+        public Battle(Player player1, Player player2)
         {
-            _party1 = party1;
-            _party2 = party2;
+            _player1 = player1;
+            _player2 = player2;
         }
 
         public void Run()
@@ -22,8 +22,8 @@ namespace TheUncodedOne
             //Basic taking turns
             while (true)
             {
-                _party1.TakeTurn();
-                _party2.TakeTurn();
+                _player1.TakeTurn(this);
+                _player2.TakeTurn(this);
                 Thread.Sleep(500);
             }
         }

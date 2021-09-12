@@ -2,13 +2,15 @@
 using System.Threading;
 using TheUncodedOne;
 
-Party Heroes = new Party(new ComputerPlayer());
+Party Heroes = new Party();
 Console.Write("What is your name? ");
 string input = Console.ReadLine();
-Heroes.AddMember(new TrueProgrammer(input));
+Heroes.Members.Add(new TrueProgrammer(input));
+ComputerPlayer HeroPlayer = new ComputerPlayer(Heroes);
 
-Party Monsters = new Party(new ComputerPlayer());
-Monsters.AddMember(new Skeleton());
+Party Monsters = new Party();
+Monsters.Members.Add(new Skeleton());
+ComputerPlayer EnemyPlayer = new ComputerPlayer(Monsters);
 
-Battle game = new Battle(Heroes, Monsters);
+Battle game = new Battle(HeroPlayer, EnemyPlayer);
 game.Run();

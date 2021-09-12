@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TheUncodedOne
 {
-    class Character
+    public class Character
     {
         public string Name { get; private set; }
         private List<IAction> _actions = new List<IAction>();
@@ -17,11 +17,9 @@ namespace TheUncodedOne
             _actions.Add(new DoNothing());
         }
 
-        public void TakeTurn()
+        public void TakeAction(int index)
         {
-            Console.WriteLine($"It is {Name}'s turn...");
-            // Do nothing
-            _actions[0].Run(this);
+            _actions[index].Run(this);
         }
     }
 }
