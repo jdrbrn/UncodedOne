@@ -13,7 +13,9 @@ namespace TheUncodedOne
         }
         public void Run(Character character)
         {
+            AttackData attackData = _attack.Data;
             Console.WriteLine($"{character.Name} used {_attack.Name} on {_target.Name}");
+            Console.WriteLine($"{_target.Name} was dealt {attackData.damage} damage!");
             Console.WriteLine();
         }
     }
