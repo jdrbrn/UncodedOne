@@ -23,5 +23,17 @@ namespace TheUncodedOne
                 Thread.Sleep(500);
             }
         }
+
+        public Party GetParty(Character character)
+        {
+            if (_player1.Party.Members.Contains(character)) return _player1.Party;
+            else return _player2.Party;
+        }
+
+        public Party GetEnemyParty(Character character)
+        {
+            if (_player1.Party.Members.Contains(character)) return _player2.Party;
+            else return _player1.Party;
+        }
     }
 }
