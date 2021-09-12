@@ -6,7 +6,12 @@
 
         protected override IAction PickAction(Battle battle, Character character)
         {
-            //Only supports running the first action (DoNothing)
+            // Check if we want to attack
+            if (true)
+            {
+                return new AttackAction(character.Attacks[0], battle.GetEnemyParty(character).Members[0]);
+            }
+            //Default action is Do Nothing
             return new DoNothing();
         }
     }

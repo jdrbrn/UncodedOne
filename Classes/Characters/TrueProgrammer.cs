@@ -2,6 +2,9 @@
 {
     class TrueProgrammer : Character
     {
-        public TrueProgrammer(string name) : base(name) { }
+        public TrueProgrammer(string name) : base(name)
+        {
+            Attacks.Add(new Attack { Name = "Punch" });
+        }
     }
 }

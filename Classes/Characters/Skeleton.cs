@@ -4,6 +4,7 @@
     {
         public Skeleton(string name = "SKELETON") : base(name)
         {
+            Attacks.Add(new Attack { Name = "Bone Crunch" });
         }
     }
 }
