@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace TheUncodedOne
 {
-    public struct Attack
+    public interface IAttack
     {
-        public string Name;
+        public string Name { get; }
     }
 }

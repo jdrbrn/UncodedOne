@@ -5,8 +5,8 @@ namespace TheUncodedOne
     class AttackAction : IAction
     {
         private Character _target;
-        private Attack _attack;
-        public AttackAction(Attack attack, Character target)
+        private IAttack _attack;
+        public AttackAction(IAttack attack, Character target)
         {
             _attack = attack;
             _target = target;

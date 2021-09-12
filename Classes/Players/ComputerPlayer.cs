@@ -9,7 +9,7 @@
             // Check if we want to attack
             if (true)
             {
-                return new AttackAction(character.Attacks[0], battle.GetEnemyParty(character).Members[0]);
+                return new AttackAction(character.AttackList[0], battle.GetEnemyParty(character).Members[0]);
             }
             //Default action is Do Nothing
             return new DoNothing();
