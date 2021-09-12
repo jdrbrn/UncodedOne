@@ -9,15 +9,14 @@ namespace TheUncodedOne
         {
             _party = party;
         }
-        protected abstract int PickAction(Battle battle, Character character);
+        protected abstract IAction PickAction(Battle battle, Character character);
 
         public void TakeTurn(Battle battle)
         {
             foreach (Character member in _party.Members)
             {
                 Console.WriteLine($"It is {member.Name}'s turn");
-                int action = PickAction(battle, member);
-                member.TakeAction(action);
+                PickAction(battle, member).Run(member);
             }
         }
     }

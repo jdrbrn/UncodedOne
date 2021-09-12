@@ -1,6 +1,6 @@
 ﻿namespace TheUncodedOne
 {
-    interface IAction
+    public interface IAction
     {
         public void Run(Character character);
     }
