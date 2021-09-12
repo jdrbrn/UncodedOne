@@ -2,7 +2,8 @@
 {
     class Skeleton : Character
     {
-        public Skeleton(string name) : base(name) { }
-        public Skeleton() : base("SKELETON") { }
+        public Skeleton(string name = "SKELETON") : base(name)
+        {
+        }
     }
 }
