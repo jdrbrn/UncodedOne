@@ -4,9 +4,11 @@ using TheUncodedOne;
 
 Party Heroes = new Party();
 Party Monsters = new Party();
-
-Heroes.AddMember(new Skeleton());
 Monsters.AddMember(new Skeleton());
+
+Console.Write("What is your name? ");
+string input = Console.ReadLine();
+Heroes.AddMember(new TrueProgrammer(input));
 
 //Basic taking turns
 while (true)
