@@ -18,5 +18,10 @@ namespace TheUncodedOne
         {
             CurHealth = System.Math.Max(CurHealth - dmg, 0);
         }
+
+        public void Heal(int health)
+        {
+            CurHealth = System.Math.Min(CurHealth + health, MaxHealth);
+        }
     }
 }
