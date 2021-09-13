@@ -4,7 +4,7 @@ namespace TheUncodedOne
 {
     class DoNothing : IAction
     {
-        public void Run(Character character)
+        public void Run(Character character, Battle battle)
         {
             Console.WriteLine($"{character.Name} did NOTHING");
             Console.WriteLine();
