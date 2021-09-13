@@ -34,9 +34,6 @@ namespace TheUncodedOne
                 _player2.TakeTurn(this);
                 Thread.Sleep(500);
             }
-
-            if (_player1.Party.Members.Count > 0) Console.WriteLine("The heroes have defeated the Uncoded One!");
-            else Console.WriteLine("The heroes have lost...");
         }
 
         public Party GetParty(Character character)

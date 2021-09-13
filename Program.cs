@@ -7,9 +7,29 @@ string input = Console.ReadLine();
 Heroes.Members.Add(new TrueProgrammer(input));
 ComputerPlayer HeroPlayer = new ComputerPlayer(Heroes);
 
-Party Monsters = new Party();
-Monsters.Members.Add(new Skeleton());
-ComputerPlayer EnemyPlayer = new ComputerPlayer(Monsters);
+Party MonstersRound1 = new Party();
+MonstersRound1.Members.Add(new Skeleton());
+ComputerPlayer EnemyRound1 = new ComputerPlayer(MonstersRound1);
 
-Battle game = new Battle(HeroPlayer, EnemyPlayer);
-game.Run();
+Party Monsters2 = new Party();
+Monsters2.Members.Add(new Skeleton());
+Monsters2.Members.Add(new Skeleton());
+ComputerPlayer EnemyRound2 = new ComputerPlayer(Monsters2);
+
+Player[] EnemyTeams = new Player[] { EnemyRound1, EnemyRound2 };
+
+for (int i=0; i<EnemyTeams.Length; i++)
+{
+    new Battle(HeroPlayer, EnemyTeams[i]).Run();
+    Console.WriteLine();
+    if (HeroPlayer.Party.Members.Count == 0) break;
+    if (i<EnemyTeams.Length-1)
+    {
+        Console.WriteLine("You have won the battle!");
+        Console.WriteLine("Prepare for the next one...");
+        Console.WriteLine();
+    }
+}
+
+if (HeroPlayer.Party.Members.Count > 0) Console.Write("You have defeated the Uncoded One!");
+else Console.WriteLine("The Uncoded One has prevailed over the heroes...");
