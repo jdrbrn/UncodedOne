@@ -13,5 +13,10 @@ namespace TheUncodedOne
         {
             Name = name;
         }
+
+        public void TakeDamage(int dmg)
+        {
+            CurHealth = System.Math.Max(CurHealth - dmg, 0);
+        }
     }
 }

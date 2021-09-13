@@ -15,7 +15,9 @@ namespace TheUncodedOne
         {
             AttackData attackData = _attack.Data;
             Console.WriteLine($"{character.Name} used {_attack.Name} on {_target.Name}");
+            _target.TakeDamage(attackData.damage);
             Console.WriteLine($"{_target.Name} was dealt {attackData.damage} damage!");
+            Console.WriteLine($"{_target.Name} is at {_target.CurHealth}/{_target.MaxHealth} HP");
             Console.WriteLine();
         }
     }
