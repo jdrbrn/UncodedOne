@@ -5,7 +5,7 @@ Party Heroes = new Party();
 Console.Write("What is your name? ");
 string input = Console.ReadLine();
 Heroes.Members.Add(new TrueProgrammer(input));
-ComputerPlayer HeroPlayer = new ComputerPlayer(Heroes);
+HumanPlayer HeroPlayer = new HumanPlayer(Heroes);
 
 Party MonstersRound1 = new Party();
 MonstersRound1.Members.Add(new Skeleton());
