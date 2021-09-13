@@ -16,7 +16,11 @@ Monsters2.Members.Add(new Skeleton());
 Monsters2.Members.Add(new Skeleton());
 ComputerPlayer EnemyRound2 = new ComputerPlayer(Monsters2);
 
-Player[] EnemyTeams = new Player[] { EnemyRound1, EnemyRound2 };
+Party MonstersRound3 = new Party();
+MonstersRound3.Members.Add(new UncodedOne());
+ComputerPlayer EnemyRound3 = new ComputerPlayer(MonstersRound3);
+
+Player[] EnemyTeams = new Player[] { EnemyRound1, EnemyRound2, EnemyRound3 };
 
 for (int i=0; i<EnemyTeams.Length; i++)
 {
