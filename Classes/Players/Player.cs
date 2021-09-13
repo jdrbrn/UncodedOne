@@ -15,6 +15,7 @@ namespace TheUncodedOne
         {
             foreach (Character member in Party.Members)
             {
+                battle.DisplayTurnStatus(member);
                 Console.WriteLine($"It is {member.Name}'s turn");
                 PickAction(battle, member).Run(member, battle);
                 if (battle.GameOver) break;

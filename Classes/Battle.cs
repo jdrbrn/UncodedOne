@@ -53,5 +53,21 @@ namespace TheUncodedOne
             if (_player1.Party.Members.Count < 0 || _player2.Party.Members.Count < 0) return true;
             return false;
         }
+
+        public void DisplayTurnStatus(Character character)
+        {
+            Console.WriteLine("===============BATTLE================");
+            foreach (Character member in _player1.Party.Members)
+            {
+                Console.WriteLine((character == member ? "-->  " : "     ") + $"{member.Name} ({member.CurHealth}/{member.MaxHealth})");
+            }
+            Console.WriteLine("-----------------VS------------------");
+            foreach (Character member in _player2.Party.Members)
+            {
+                Console.WriteLine((character == member ? "-->  " : "     ") + $"{member.Name} ({member.CurHealth}/{member.MaxHealth})");
+            }
+            Console.WriteLine("=====================================");
+            Console.WriteLine();
+        }
     }
 }

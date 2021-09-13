@@ -27,6 +27,8 @@ else
     HeroPlayer = new ComputerPlayer(Heroes);
 }
 
+Console.Clear();
+
 Party MonstersRound1 = new Party();
 MonstersRound1.Members.Add(new Skeleton());
 
