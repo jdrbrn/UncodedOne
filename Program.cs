@@ -1,24 +1,16 @@
 ﻿using System;
 using TheUncodedOne;
 
-Console.WriteLine("How do you want to fight The Uncoded One?");
-Console.WriteLine("1 - Human vs Computer");
-Console.WriteLine("2 - Computer vs Computer");
-Console.WriteLine("3 - Human vs Human");
-int gameTypeChoice;
-string input;
-do
-{
-    Console.Write("What do you want to do? ");
-    input = Console.ReadLine();
-} while (!Int32.TryParse(input, out gameTypeChoice) && (gameTypeChoice >= 1 && gameTypeChoice <= 2));
+Console.WriteLine("You have multiple ways to fight The Uncoded One:");
+string[] gameOptions = new string[] { "Human vs Computer", "Computer vs Computer", "Human vs Human" };
+int gameTypeChoice = MenuHelper.GetInputFromList(gameOptions, "How should the fight go? ");
 
 Party Heroes = new Party();
 Console.Write("What is the name of the hero? ");
 string name = Console.ReadLine();
 Heroes.Members.Add(new TrueProgrammer(name));
 Player HeroPlayer;
-if (gameTypeChoice != 2)
+if (gameTypeChoice != 1)
 {
     HeroPlayer = new HumanPlayer(Heroes);
 }
@@ -44,7 +36,7 @@ Party[] EnemyTeams = new Party[] { MonstersRound1, MonstersRound2, MonstersRound
 for (int i=0; i<EnemyTeams.Length; i++)
 {
     Player Enemy;
-    if (gameTypeChoice==3)
+    if (gameTypeChoice==2)
     {
         Enemy = new HumanPlayer(EnemyTeams[i]);
     }

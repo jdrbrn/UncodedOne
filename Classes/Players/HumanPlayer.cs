@@ -1,5 +1,4 @@
-﻿using System;
-namespace TheUncodedOne
+﻿namespace TheUncodedOne
 {
     class HumanPlayer : Player
     {
@@ -7,23 +6,15 @@ namespace TheUncodedOne
 
         protected override IAction PickAction(Battle battle, Character character)
         {
-            Console.WriteLine($"1 - Standard Attack ({character.AttackList[0].Name})");
-            Console.WriteLine($"2 - Do Nothing");
-            int choice;
-            string input;
-            do
-            {
-                Console.Write("What do you want to do? ");
-                input = Console.ReadLine();
-            } while (!Int32.TryParse(input, out choice) && (choice >= 1 && choice <= 2));
+            string[] gameOptions = new string[] { $"Standard Attack ({character.AttackList[0].Name})", "Do Nothing"};
+            int choice = MenuHelper.GetInputFromList(gameOptions, "What do you want to do? ");
 
             // Check if we want to attack
-            if (choice == 1)
-            {
-                return new AttackAction(character.AttackList[0], battle.GetEnemyParty(character).Members[0]);
+            switch (choice)
+            {     
+                case 0: return new AttackAction(character.AttackList[0], battle.GetEnemyParty(character).Members[0]);
+                default: return new DoNothing();
             }
-            //Default action is Do Nothing
-            return new DoNothing();
         }
     }
 }
