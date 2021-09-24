@@ -18,6 +18,9 @@ else
 {
     HeroPlayer = new ComputerPlayer(Heroes);
 }
+Heroes.Items.Add(new TheUncodedOne.Items.HealthPotion());
+Heroes.Items.Add(new TheUncodedOne.Items.HealthPotion());
+Heroes.Items.Add(new TheUncodedOne.Items.HealthPotion());
 
 Console.Clear();
 
@@ -44,6 +47,7 @@ for (int i=0; i<EnemyTeams.Length; i++)
     {
         Enemy = new ComputerPlayer(EnemyTeams[i]);
     }
+    EnemyTeams[i].Items.Add(new TheUncodedOne.Items.HealthPotion());
     new Battle(HeroPlayer, Enemy).Run();
     Console.WriteLine();
     if (HeroPlayer.Party.Members.Count == 0) break;
