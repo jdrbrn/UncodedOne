@@ -5,7 +5,7 @@ namespace TheUncodedOne
     public class Character
     {
         public string Name { get; private set; }
-        public List<IAttack> AttackList = new List<IAttack>();
+        public IAttack StandardAttack { get; protected set; }
         public int MaxHealth { get; protected set; }
         public int CurHealth { get; protected set; }
 

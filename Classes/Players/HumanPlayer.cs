@@ -9,13 +9,13 @@ namespace TheUncodedOne
 
         protected override IAction PickAction(Battle battle, Character character)
         {
-            string[] gameOptions = new string[] { $"Standard Attack ({character.AttackList[0].Name})", "Use Item", "Do Nothing"};
+            string[] gameOptions = new string[] { $"Standard Attack ({character.StandardAttack.Name})", "Use Item", "Do Nothing"};
             int choice = MenuHelper.GetInputFromList(gameOptions, "What do you want to do? ");
 
             // Check if we want to attack
             switch (choice)
             {
-                case 0: return new AttackAction(character.AttackList[0], battle.GetEnemyParty(character).Members[0]);
+                case 0: return new AttackAction(character.StandardAttack, battle.GetEnemyParty(character).Members[0]);
                 case 1: return PickItem(battle, character);
                 default: return new DoNothing();
             }
