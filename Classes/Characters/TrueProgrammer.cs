@@ -6,6 +6,7 @@
         {
             CurHealth = MaxHealth = 25;
             StandardAttack = new Attacks.Punch();
+            EquippedGear = new Gear.Sword();
         }
     }
 }

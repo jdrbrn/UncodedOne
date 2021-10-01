@@ -26,10 +26,13 @@ Console.Clear();
 
 Party MonstersRound1 = new Party();
 MonstersRound1.Members.Add(new Skeleton());
+MonstersRound1.Members[0].EquippedGear = new TheUncodedOne.Gear.Dagger();
 
 Party MonstersRound2 = new Party();
 MonstersRound2.Members.Add(new Skeleton());
 MonstersRound2.Members.Add(new Skeleton());
+MonstersRound2.Gear.Add(new TheUncodedOne.Gear.Dagger());
+MonstersRound2.Gear.Add(new TheUncodedOne.Gear.Dagger());
 
 Party MonstersRound3 = new Party();
 MonstersRound3.Members.Add(new UncodedOne());
