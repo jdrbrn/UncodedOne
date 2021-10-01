@@ -10,7 +10,7 @@ public static class MenuHelper
         }
     }
 
-    public static int GetInputFromList(string[] entries, string prompt)
+    public static int GetInputFromArray(string[] entries, string prompt)
     {
         int choice;
         string input;

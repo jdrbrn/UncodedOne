@@ -3,7 +3,7 @@ using TheUncodedOne;
 
 Console.WriteLine("You have multiple ways to fight The Uncoded One:");
 string[] gameOptions = new string[] { "Human vs Computer", "Computer vs Computer", "Human vs Human" };
-int gameTypeChoice = MenuHelper.GetInputFromList(gameOptions, "How should the fight go? ");
+int gameTypeChoice = MenuHelper.GetInputFromArray(gameOptions, "How should the fight go? ");
 
 Party Heroes = new Party();
 Console.Write("What is the name of the hero? ");

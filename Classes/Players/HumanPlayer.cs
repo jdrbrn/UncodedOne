@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace TheUncodedOne
@@ -10,7 +11,7 @@ namespace TheUncodedOne
         protected override IAction PickAction(Battle battle, Character character)
         {
             string[] gameOptions = new string[] { $"Standard Attack ({character.StandardAttack.Name})", "Use Item", "Do Nothing"};
-            int choice = MenuHelper.GetInputFromList(gameOptions, "What do you want to do? ");
+            int choice = MenuHelper.GetInputFromArray(gameOptions, "What do you want to do? ");
 
             // Check if we want to attack
             switch (choice)
@@ -26,7 +27,7 @@ namespace TheUncodedOne
             List<IItem> items = battle.GetParty(character).Items;
             List<string> choices = items.Select(i => i.Name + " (" + i.Details + ")").ToList();
             choices.Add("None (Go Back)");
-            int choice = MenuHelper.GetInputFromList(choices.ToArray(), "Use what item? ");
+            int choice = MenuHelper.GetInputFromArray(choices.ToArray(), "Use what item? ");
             if (choice == items.Count)
             {
                 return PickAction(battle, character);
