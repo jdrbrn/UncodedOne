@@ -8,6 +8,7 @@ namespace TheUncodedOne
         public IAttack StandardAttack { get; protected set; }
         public int MaxHealth { get; protected set; }
         public int CurHealth { get; protected set; }
+        public IGear EquippedGear;
 
         public Character(string name)
         {
