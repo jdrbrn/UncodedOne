@@ -60,11 +60,13 @@ namespace TheUncodedOne
             foreach (Character member in _player1.Party.Members)
             {
                 Console.WriteLine((character == member ? "-->  " : "     ") + $"{member.Name} ({member.CurHealth}/{member.MaxHealth})");
+                Console.WriteLine("        Gear: " + (member.EquippedGear==null? "None" : member.EquippedGear.Name));
             }
             Console.WriteLine("-----------------VS------------------");
             foreach (Character member in _player2.Party.Members)
             {
                 Console.WriteLine((character == member ? "-->  " : "     ") + $"{member.Name} ({member.CurHealth}/{member.MaxHealth})");
+                Console.WriteLine("        Gear: " + (member.EquippedGear == null ? "None" : member.EquippedGear.Name));
             }
             Console.WriteLine("=====================================");
             Console.WriteLine();
